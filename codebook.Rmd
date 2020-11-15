@@ -1,0 +1,74 @@
+---
+title: "Codebook"
+author: "Sina"
+date: "15 11 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Modifications
+
+The data was modified in the following ways:
+1. The subject, x and y files of the training and test data was merged to form a complete test and complete training data respectively.
+2. The complete test and training datasets were merged to form one big dataset.
+3. The features dataset was added as column names.
+4. All columns containing info about mean and standard deviation were extracted.
+5. The activity dataset was added as a column for descriptive activity names.
+6. The column names were rewritten to remove abbreviations and make them more understandable.
+7. A second, independent dataset was created by grouping the data according to subject ID and activity and listing the mean value of all variables.
+
+# Variables
+
+## Identifiers
+
+Subject ID: Each of the 30 subjects was given a separate subject ID.
+Activity Description: There are 6 differenty activities (laying, sitting, standing, walking, walking downstairs, walking upstairs).
+
+## Measurements
+
+The code for the measurements is made up of several parts:
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+tAcc-XYZ and tGyro-XYZ and denotes whether the data comes from the Accelerator or the Gyroscope. t means that this is a time domain signal. The acceleration data was then further subdivided into body and gravity acceleration (tBodyAcc-XYZ and tGravityAcc-XYZ). Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ) were calculated by deriving body linear acceleration and angular velocity in time. For all of these measurements, the magnitude was also calculated (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag denoted the fequency signal. 
+
+For these signals, the following values were calculated:
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+angle(): Angle between to vectors.
+
+More information can be found in the the file "features_info.txt" in the dataset.
